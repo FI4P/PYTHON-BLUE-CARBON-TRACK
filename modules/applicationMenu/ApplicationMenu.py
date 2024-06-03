@@ -5,9 +5,8 @@ class ApplicationMenu:
             "Functionalities": ["Adicionar embarcação", "Remover embarcação", "Listar embarcações","Emissão de CO2 por embarcacão especifica", "Análise das embarcações disponiveis"]
         }
 
-
     def loadMenu(self):
-        for i in range(len(self._menu["Options"])):
-            print(f"\033[92m{self._menu['Options'][i]}\033[0m - {self._menu['Functionalities'][i]}")
+        for i in range(len(self._applicationMenu["Options"])):
+            print(f"\033[92m{self._applicationMenu['Options'][i]}\033[0m - {self._applicationMenu['Functionalities'][i]}")
 
 

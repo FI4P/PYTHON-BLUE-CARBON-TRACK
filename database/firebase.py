@@ -14,7 +14,7 @@ firebase_admin.initialize_app(cred, {
 })
 
 # As an admin, the app has access to read and write all data, regradless of Security Rules
-ref = db.reference('/')
+ref = db.reference('vessels')
 
 def insertVessel(vessel):
 
@@ -22,8 +22,8 @@ def insertVessel(vessel):
         return print("O argumento deve ser um objeto!")
 
     try:
-        ref.child('vessels').push(vessel)
-        print("Inclusão bem-sucedida")
+        ref.child(f'vessel_{vessel["imo"]}').set(vessel)
+        print("Inclusão bem-sucedida") 
     except Exception as e:
         print("Ocorreu um erro ao inserir no banco de dados:", e)
 
