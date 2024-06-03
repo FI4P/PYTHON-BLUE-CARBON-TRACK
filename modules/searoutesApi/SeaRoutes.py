@@ -3,14 +3,11 @@ import requests
 class Searoute:
     @staticmethod
     def getVesselByName(vesselName):
-
-
         if not isinstance(vesselName, str):
             raise ValueError("O nome do navio deve ser uma string.")
-        
         if vesselName.isspace():
             vesselName = vesselName.replace(" ", "%20")
-
+            
         endpoint = f"https://api.searoutes.com/vessel/v2/{vesselName}/info"
         headers = {
             "accept": "application/json",
@@ -20,8 +17,9 @@ class Searoute:
         try:
             response = requests.get(endpoint, headers=headers)
             response.raise_for_status() 
-            vesselsArray = response.json()
-            return vesselsArray[0]
+            if(response.status_code == 200):
+                vesselsArray = response.json()
+                return vesselsArray[0]
         except requests.exceptions.HTTPError as http_err:
             print(f"HTTP error occurred: {http_err}")
         except requests.exceptions.ConnectionError as conn_err:

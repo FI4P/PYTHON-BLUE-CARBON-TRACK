@@ -1,15 +1,12 @@
 from modules.searoutesApi import SeaRoutes;
-from modules.applicationMenu import applicationMenu;
+from modules.applicationMenu import ApplicationMenu;
 from database import firebase
 
-menu = applicationMenu.ApplicationMenu()
+applicationMenu = ApplicationMenu.ApplicationMenu()
 
+def main():
+    menuId = applicationMenu.loadMenu()    
+    applicationMenu.choosedOption(menuId)
 
-
-vessel = SeaRoutes.Searoute.getVesselByName("nyc")
-
-firebase.insertVessel(vessel)
-
-menu.loadMenu()
-
+main()
 
