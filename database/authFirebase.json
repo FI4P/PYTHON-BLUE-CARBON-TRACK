@@ -1,0 +1,14 @@
+{
+    "type": "service_account",
+    "project_id": "bluecarbontracking",
+    "private_key_id": "6fd8c2d47664f30ceb1f1c77b0d0aec1449fc78f",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQChisIzppY4boBl\nWddZjdac7QL1/dlEhOQ7Ix3gMXAxlAgigjBQUPWXAo/3NBMNvo7bZyV47YRYbJt6\nEYrSpCjIM8DFRepuFZv2EnC3ktKK1WH+z+EyW8EpAmLZOCYv82aXu7haR9VDpOjX\n78cluffSn+IyM31KXu5lwixQQ1/jJ9HKpaGCcHirp0YmhVzeL9TJWS/wIjne3XRN\n1twowopVN/lf2nwMNESZfVuZCyboP4YXXpZzFstjY9fMS2EbLFFlLCSwAeDdHN7+\nAJXXw3g8pj5mNdrcQHd3dgA1iYiBUd3CGhO9dumyonRlv/FgnmI/7ZxRhXostBYv\nltI1FL8vAgMBAAECggEACM+qFWnPZSHshvAGOwWYNdRdBlCOT+/KXcoQkHCh5Ke6\nZId4CH7MpoFRRkk6MNRlXmTwj6QE7/3HN+VKY9WTE+MexKPc9vGJduaSl1tpeIEj\nEzmrgt+rrYefyfwHY94sM7fdhQRzXCPb6iCosCTF9mBvf2V86Vg8O04CtMNisN/I\n7m9jY7uz0PDFNME+EriNu7fWLhFYvRLizQ+Mddpbc4T6lQmrFq8UfT3q3hnqdWl5\nyYBY9xAwaZ+1up2Szz4gGUWbldHEg5g64dEicWa4wghUPA9cyH4Qqr/dO6AgglUo\n8JGM+Jvw5hnDl/MqhmXxE42sL4PtYWhRUmxAP0p7AQKBgQDWcRTAdpQr3WcDhe97\n9PC7/Qg1YPQEXZOiU95CEbgexNSPZ9abcVrqiPLC26qqGuQkMonFOcFczmY9FCuz\nZElL0D3i9wbNhoO3eC3JEGWlHc+KvFD5p1rJuEuTG4CuwbMS67obFyKAJW6UmSYa\nfxP/nY5GDrg42vSLV3Eq9Ir34QKBgQDA2TV2i8hHsuZZVuKja5a4n5yQVk3mjhxI\nMWBJfomcUZ9riwv8FHB4mOpEO43mLBWjkQg0GE7hg4H+0FT0IAvXgTvTefVGU31J\nLbAensv1D0q/MI8q7swBVbXWjj10QsuIQTy4zi2JZLdt2zQo4znVBAyqA2P2717n\nv2YbTSNZDwKBgQDG3d250v38Y/nJiacbVH8AR1sabYw+lC16p76BlP8kAbOCPnEG\nfKwsvs4rKR3vXLrgWsHrVnFcyMiFsjQIzGMw3LDXz/DOHwX92oTTZtJsuuWiqpuJ\nusr2MWRcy2+eIWIZlORlhSHop04Snqh4gAsizZGIpNPxXhTVOEVp6ZkK4QKBgEg5\n0YUpiwQXY6A4Iz+zTsqstLV2LUzZEoyTOY2s/5r1EvDzLbTmbs0r8ClH6Lg48I3H\nBryEEh7x4uDtY7PewLCgrShh99Oz9ytOGjUNojOQ25zJcgVRVER3tle6BBgj4BiS\n3kwUpAdeGjjhrSJXH9TA5IFULb9RHUlMbNByzndPAoGAHolfXlzKMuLpkcsNXDmx\nkV7hq6JEwW9BZEgPXGMZAX7n56z81wWxcaZZE4p27VTsO50HPy8d//kzQmUxpBac\nzs2yppW1E06DFVpVAvQNI7ijU63wwwss3cbCukQpq861r3mUCMft3Ukez73eOgMb\ndPVbmsPE8FJbnbPTRVvfp70=\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-t779k@bluecarbontracking.iam.gserviceaccount.com",
+    "client_id": "105661786175583296431",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-t779k%40bluecarbontracking.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+  }
+  
