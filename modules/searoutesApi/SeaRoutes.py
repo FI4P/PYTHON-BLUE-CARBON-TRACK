@@ -49,7 +49,7 @@ class Searoute:
             return None
 
     @staticmethod
-    def getCo2ByGivenVessel(vesselImo):
+    def getCo2ByGivenVessel(vesselImo, departurePort, destinationPort):
         base_url = f"https://api.searoutes.com/co2/v2/direct/sea?&imo={vesselImo}"
 
         headers = {
@@ -58,8 +58,8 @@ class Searoute:
         }
 
         params = {
-            "fromLocode": "FRMRS",       # Localização de origem
-            "toLocode" : "HKHKG",        # Localização de destino
+            "fromLocode": departurePort,       # Localização de origem
+            "toLocode" : destinationPort,        # Localização de destino
             "allowIceAreas": "false",    # Permitir áreas de gelo
             "avoidHRA": "false",         # Evitar áreas de alto risco
             "avoidSeca": "false",        # Evitar áreas de controle de emissões de enxofre

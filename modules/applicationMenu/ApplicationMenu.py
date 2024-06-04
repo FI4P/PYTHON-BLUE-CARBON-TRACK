@@ -9,8 +9,8 @@ messages = applicationMessages.Messages()
 class ApplicationMenu:
     def __init__(self):
         self._applicationMenu = {
-            "Options": ["1", "2", "3", "4", "5"],
-            "Functionalities": ["Adicionar embarcação ao banco de dados", "Remover embarcação do banco de dados", "Listar embarcações disponíveis","Emissão de CO2 por embarcacão especifica", "Análise das embarcações disponiveis"]
+            "Options": ["1", "2", "3", "4", "5", "0"],
+            "Functionalities": ["Adicionar embarcação ao banco de dados", "Remover embarcação do banco de dados", "Listar embarcações disponíveis","Emissão de CO2 por embarcacão especifica", "Análise das embarcações disponiveis", "Informações gerais - Embarcações"]
         }
 
     def loadMenu(self):
@@ -38,18 +38,33 @@ class ApplicationMenu:
             vessel = SeaRoutes.Searoute.getVesselByName(vesselName)
             firebase.insertVessel(vessel)
             return
+        if(selectedOption == "2"):
+            vesselImo = input("Digite o IMO da embarcação:  ")
+            firebase.deleteVessel(vesselImo)
+            return
         if(selectedOption == "3"):
             allVessels = firebase.getAllVessels()
             ApiInputs.formatPrint(allVessels)
             return
         if(selectedOption == "4"):
             vesselImo = input("Digite o IMO da embarcação:  ")
-            co2Emission = SeaRoutes.Searoute.getCo2ByGivenVessel(vesselImo)
+            departurePort = input("Digite o porto destino da embarcação:  ")
+            destinationPort = input("Digite o porto destino da embarcação:  ")
+            co2Emission = SeaRoutes.Searoute.getCo2ByGivenVessel(vesselImo, departurePort,destinationPort)
+            firebase.insertVesselCo2Info(vesselImo, co2Emission)
             if(not co2Emission):
                 messages.errorMessages("Não foi possivel encontrar a informação da embarcação!")
                 return
             co2EmissionData = ApiInputs.co2Infos(co2Emission)
             ApiInputs.printco2Infos(co2EmissionData, vesselImo)
+            return
+        if(selectedOption == "5"):
+            allCo2Infos = firebase.getAllCo2Infos()
+            extractData = ApiInputs.extractCo2Infos(allCo2Infos)
+            ApiInputs.co2InfosPrint(extractData)
+            return
+        if(selectedOption == "0"):
+            ApiInputs.geralInfos()
             return
         
 
