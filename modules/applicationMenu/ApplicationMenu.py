@@ -2,9 +2,9 @@ from modules.applicationMessages import applicationMessages;
 from modules.searoutesApi import SeaRoutes;
 from modules.applicationMenu import ApplicationMenu;
 from database import firebase
-from modules.searoutesApi.apiInputsValidations import inputs; 
+from modules.searoutesApi.apiInputsValidations.inputs import ApiInputs;
 
-apiInputs = inputs.ApiInputs()
+
 messages = applicationMessages.Messages()
 class ApplicationMenu:
     def __init__(self):
@@ -39,7 +39,20 @@ class ApplicationMenu:
             firebase.insertVessel(vessel)
             return
         if(selectedOption == "3"):
-            allVessls = firebase.getAllVessels()
-            print(allVessls)
+            allVessels = firebase.getAllVessels()
+            ApiInputs.formatPrint(allVessels)
+            return
+        if(selectedOption == "4"):
+            vesselImo = input("Digite o IMO da embarcação:  ")
+            co2Emission = SeaRoutes.Searoute.getCo2ByGivenVessel(vesselImo)
+            if(not co2Emission):
+                messages.errorMessages("Não foi possivel encontrar a informação da embarcação!")
+                return
+            co2EmissionData = ApiInputs.co2Infos(co2Emission)
+            ApiInputs.printco2Infos(co2EmissionData, vesselImo)
+            return
+        
+
+            
             
 
