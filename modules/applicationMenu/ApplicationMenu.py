@@ -51,10 +51,13 @@ class ApplicationMenu:
             departurePort = input("Digite o porto destino da embarcação:  ")
             destinationPort = input("Digite o porto destino da embarcação:  ")
             co2Emission = SeaRoutes.Searoute.getCo2ByGivenVessel(vesselImo, departurePort,destinationPort)
-            firebase.insertVesselCo2Info(vesselImo, co2Emission)
+            name = SeaRoutes.Searoute.getVesselPosition(vesselImo)
             if(not co2Emission):
                 messages.errorMessages("Não foi possivel encontrar a informação da embarcação!")
                 return
+            if(name):
+                co2Emission["name"] = name
+            firebase.insertVesselCo2Info(vesselImo, co2Emission)
             co2EmissionData = ApiInputs.co2Infos(co2Emission)
             ApiInputs.printco2Infos(co2EmissionData, vesselImo)
             return

@@ -11,7 +11,7 @@ class Searoute:
         endpoint = f"https://api.searoutes.com/vessel/v2/{vesselName}/info"
         headers = {
             "accept": "application/json",
-            "x-api-key": "EUiWPXCu0p887kiSoIcPC2v623mEdVO45otMVZJv"
+            "x-api-key": "k7jzLdPxjz8Kw1IJVE5BF73Fwl9GvapJ7KlEItnG"
         }
         
         try:
@@ -37,34 +37,35 @@ class Searoute:
 
         headers = {
             "accept": "application/json",
-            "x-api-key": "EUiWPXCu0p887kiSoIcPC2v623mEdVO45otMVZJv"
+            "x-api-key": "k7jzLdPxjz8Kw1IJVE5BF73Fwl9GvapJ7KlEItnG"
         }
 
         response = requests.get(url, headers=headers)
         if response.status_code == 200:
             data = response.json()
-            coordinates = data[0]['position']['geometry']['coordinates']
-            return coordinates
+            name = data[0]["info"]["name"]
+            return name
         else:
-            return None
+            return False
 
     @staticmethod
     def getCo2ByGivenVessel(vesselImo, departurePort, destinationPort):
-        base_url = f"https://api.searoutes.com/co2/v2/direct/sea?&imo={vesselImo}"
+        base_url = f"https://api.searoutes.com/co2/v2/direct/sea"
 
         headers = {
             "accept": "application/json",
-            "x-api-key": "EUiWPXCu0p887kiSoIcPC2v623mEdVO45otMVZJv"
+            "x-api-key": "k7jzLdPxjz8Kw1IJVE5BF73Fwl9GvapJ7KlEItnG"
         }
 
         params = {
             "fromLocode": departurePort,       # Localização de origem
-            "toLocode" : destinationPort,        # Localização de destino
+            "toLocode" : destinationPort,   
+            "vesselImo": vesselImo,     # Localização de destino
             "allowIceAreas": "false",    # Permitir áreas de gelo
             "avoidHRA": "false",         # Evitar áreas de alto risco
             "avoidSeca": "false",        # Evitar áreas de controle de emissões de enxofre
             "nContainers": 1,            # Número de contêineres
-            "vesselImo": vesselImo      # Número IMO da embarcação
+             # Número IMO da embarcação
         }   
 
         try:
@@ -73,6 +74,6 @@ class Searoute:
             data = response.json()
             return data["co2e"]
         except Exception as err:
-            print(f'Não foi possivel encontrar a informação da embarcação providenciada!')
+            print(f'Não foi possivel encontrar a informação da embarcação providenciada!', err)
         return None
 

@@ -49,6 +49,8 @@ class ApiInputs:
         messages.successMessage(f"Relatório de emissão de C02: {vesselImo}")
         messages.applicationDivisor()
         for key in co2Data.keys():
+            if(key == "name"):
+                return
             print(f"{key} da embarcação: {co2Data[key]}")
         messages.applicationDivisor()
         
