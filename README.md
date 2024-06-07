@@ -26,6 +26,9 @@ A aplicação foi desenvolvida para permitir a análise das emissões de CO2 de 
     pip3 install requests
     pip3 install firebase-admin
 
+## :technologist: Video explicativo:
+https://youtu.be/Qeg7XleIVUI?si=Oja7ZC9GuCjBy-xz
+
 
 ## :technologist: Integrantes
 * RM 553377 - Enzo de Oliveira Rodrigues
